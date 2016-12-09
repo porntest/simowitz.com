@@ -54,6 +54,10 @@
   "scripts": {
     "test": [
       "vendor/bin/phpcs --ignore=web/wp/,vendor/ -n -s ."
+    ],
+    "compile": [
+      "cd ./web/app/themes/simowitz && npm install",
+      "cd ./web/app/themes/simowitz && npm run build:production"
     ]
   }
 }
