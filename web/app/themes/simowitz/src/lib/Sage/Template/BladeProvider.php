@@ -4,6 +4,7 @@ namespace Roots\Sage\Template;
 
 use Jenssegers\Blade\Blade;
 use Illuminate\View\Engines\CompilerEngine;
+use Illuminate\Contracts\Container\Container as ContainerContract;
 
 class BladeProvider extends Blade
 {
@@ -12,6 +13,19 @@ class BladeProvider extends Blade
 
     /** @var string */
     protected $cachePath;
+
+    /**
+     * Constructor.
+     *
+     * @param array             $viewPaths
+     * @param string            $cachePath
+     * @param ContainerContract $container
+     */
+    public function __construct($viewPaths, $cachePath, ContainerContract $container = null)
+    {
+        parent::__construct((array) $viewPaths, $cachePath, $container);
+        $this->registerViewFinder();
+    }
 
     /**
      * @param string $view
@@ -60,6 +74,20 @@ class BladeProvider extends Blade
     }
 
     /**
+     * Register the view finder implementation.
+     *
+     * @return void
+     */
+    public function registerViewFinder()
+    {
+        $this->container->bind('view.finder', function ($app) {
+            $paths = $app['config']['view.paths'];
+
+            return new FileViewFinder($app['files'], $paths);
+        });
+    }
+
+    /**
      * @param string $file
      * @return string
      */
@@ -69,7 +97,8 @@ class BladeProvider extends Blade
         $view = str_replace('\\', '/', $file);
 
         // Remove unnecessary parts of the path
-        $view = str_replace(array_merge((array) $this->viewPaths, ['.blade.php', '.php']), '', $view);
+        $remove = array_merge($this->viewPaths, array_map('basename', $this->viewPaths), ['.blade.php', '.php']);
+        $view = str_replace($remove, '', $view);
 
         // Remove leading slashes
         $view = ltrim($view, '/');
