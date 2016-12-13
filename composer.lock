@@ -4,8 +4,8 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "6fe39ff7e08104da7b53bed5d6807317",
-    "content-hash": "b7c27695f3c491caeba0294908c82d37",
+    "hash": "e2d7793bb9ea83b4b15721e61011a711",
+    "content-hash": "6951d2052a191e43dc59cff281a9200a",
     "packages": [
         {
             "name": "composer/installers",
@@ -106,6 +106,44 @@
                 "zikula"
             ],
             "time": "2016-04-13 19:46:30"
+        },
+        {
+            "name": "jjgrainger/posttypes",
+            "version": "v1.0",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/jjgrainger/PostTypes.git",
+                "reference": "69d25ea289a984b6a8b068a7038aee66e9a6e0bf"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/jjgrainger/PostTypes/zipball/69d25ea289a984b6a8b068a7038aee66e9a6e0bf",
+                "reference": "69d25ea289a984b6a8b068a7038aee66e9a6e0bf",
+                "shasum": ""
+            },
+            "require": {
+                "php": ">=5.3.0"
+            },
+            "type": "library",
+            "autoload": {
+                "psr-4": {
+                    "PostTypes\\": "src/"
+                }
+            },
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Joe Grainger",
+                    "email": "hello@jjgrainger.co.uk",
+                    "homepage": "http://jjgrainger.co.uk"
+                }
+            ],
+            "description": "A single class to help you build more advanced custom post types quickly.",
+            "homepage": "https://github.com/jjgrainger/posttype",
+            "time": "2016-08-16 12:45:44"
         },
         {
             "name": "johnpbloch/wordpress",
@@ -352,7 +390,7 @@
             "dist": {
                 "type": "zip",
                 "url": "https://downloads.wordpress.org/plugin/advanced-custom-fields.4.4.11.zip",
-                "reference": null,
+                "reference": "tags/4.4.11",
                 "shasum": null
             },
             "require": {

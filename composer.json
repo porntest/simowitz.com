@@ -40,7 +40,8 @@
     "oscarotero/env": "^1.0",
     "roots/wp-password-bcrypt": "1.0.0",
     "ext-mbstring": "^7.0",
-    "wpackagist-plugin/advanced-custom-fields": "^4.4"
+    "wpackagist-plugin/advanced-custom-fields": "^4.4",
+    "jjgrainger/posttypes": "^1.0"
   },
   "require-dev": {
     "squizlabs/php_codesniffer": "^2.5.1"
