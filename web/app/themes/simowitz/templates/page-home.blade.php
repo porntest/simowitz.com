@@ -2,15 +2,12 @@
 
 @section('content')
   @include('partials.page-header')
+    <h3>test</h3>
     <div class="row">
       <div class="col-xs">
-        <h3>header 1</h3>
-      </div>
-      <div class="col-xs">
-        <h3>header 2</h3> 
-      </div>
-      <div class="col-xs">
-        <h3>header 3</h3> 
+        <div class="hero">
+          <h1>hello</h1>
+        </div>
       </div>
     </div>
 @endsection
