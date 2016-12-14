@@ -9,6 +9,10 @@ Author URI:   https://dylan.simowitz.com/
 License:      MIT License
 */
 
-use PostTypes\PostType
+use PostTypes\PostType;
 
-new PostType('case')
+$cases = new PostType('case');
+$cases->icon('dashicons-portfolio');
+
+$testimonials = new PostType('testimonial');
+$testimonials->icon('dashicons-testimonial');
