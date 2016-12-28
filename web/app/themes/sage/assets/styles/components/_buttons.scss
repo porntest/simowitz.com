@@ -1,0 +1,47 @@
+.btn--action {
+  text-align: center;
+  border: 2px solid $gold;
+  padding: 10px 10px;
+  color: white;
+  background-color: rgba(0,0,0,0.10);
+  text-decoration: none;
+  font-family: 'Open Sans Condensed', sans-serif;
+  font-size: 1.75em;
+  position: relative;
+  &:hover {
+    text-decoration: none;
+    color: white;
+    background-color: rgba(255,255,255,0.25);
+    transition: background-color 1.25s;
+  }
+  &:hover:before {
+    width: 100%;
+    transition: width 1.25s;
+  }
+  &:before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 0px;
+    height: 3px;
+    background-color: $gold;
+    display: inline-block;
+  }
+  &:hover:after { 
+    width: 100%;
+    transition: width 1.25s;
+  }
+  &:after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    width: 0px;
+    height: 3px;
+    background-color: $gold;
+    display: inline-block; 
+  }
+}
+.btn--menu {
+}

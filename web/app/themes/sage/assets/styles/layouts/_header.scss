@@ -1,6 +1,67 @@
 .banner .nav li {
-  @extend .nav-item;
+  //@extend .nav-item;
 }
 .banner .nav a {
-  @extend .nav-link;
+  //@extend .nav-link;
 }
+.brand {
+  @extend %row;
+  align-items: center;
+}
+.brand__logo {
+  height: 70px;
+}
+.brand__text {
+  @extend %col-xs-12;
+  text-align: left;
+}
+.nav-primary {
+  @extend %row;
+  // box-shadow: 0 2px 5px 0 rgba(0,0,0,0.65);
+  background: $color5;
+  width: 100%;
+  z-index: 1;
+  transition: transform 0.5s;
+}
+.nav-button {
+  outline: none;
+}
+.sidebar {
+
+}
+@media (max-width: map-get($grid-breakpoints, md)) {
+  .sidebar {
+    display: none !important;
+    &.mm-menu {
+      display: inherit !important;
+    }
+  }
+}
+@media (min-width: map-get($grid-breakpoints, md)) {
+  .sidebar.mm-menu, 
+  .nav-button {
+    display: none !important;
+  }
+}
+//.menu-main-menu-container {
+  //position: absolute;
+  //transform: translateX(-100%); 
+  //background-color: rgba(0,0,0,0.85); 
+  //color: white;
+  //padding: 8px 12px;
+  //ul {
+    //list-style: none;
+    //margin: 0;
+    //padding: 0;
+    //position: relative;
+    //li {
+      //margin-bottom: 8px;
+      //padding: 8px 0; 
+      //background-color: red;
+    //}
+    //ul {
+      //position: absolute;
+      //top: 0;
+    //}
+  //}
+//}

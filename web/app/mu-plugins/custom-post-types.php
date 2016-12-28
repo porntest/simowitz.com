@@ -16,3 +16,6 @@ $cases->icon('dashicons-portfolio');
 
 $testimonials = new PostType('testimonial');
 $testimonials->icon('dashicons-testimonial');
+
+$awards = new PostType('award');
+$awards->icon('dashicons-awards');

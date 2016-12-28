@@ -57,3 +57,12 @@ add_filter('template_include', function ($template) {
  * Tell WordPress how to find the compiled path of comments.blade.php
  */
 add_filter('comments_template', 'App\\template_path');
+
+
+/**
+ * Allow SVG uploads through the WordPress uploader
+ */
+add_filter( 'upload_mimes', function ($mimes) {
+  $mimes['svg'] = 'image/svg+xml';
+  return $mimes;
+});

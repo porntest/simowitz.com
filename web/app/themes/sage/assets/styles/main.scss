@@ -1,15 +1,21 @@
 @import "common/variables";
 
 // Import npm dependencies
-@import "~bootstrap/scss/bootstrap";
+@import "~normalize.css/normalize";
 @import "~font-awesome/scss/font-awesome";
+@import "~flickity/css/flickity";
+@import "~hamburgers/_sass/hamburgers/hamburgers";
+@import "~jquery.mmenu/src/addons/offcanvas/jquery.mmenu.offcanvas";
+@import "~jquery.mmenu/src/css/jquery.mmenu.oncanvas";
+@import "~jquery.mmenu/dist/addons/navbars/jquery.mmenu.navbars";
+@import '~jquery.mmenu/dist/extensions/positioning/jquery.mmenu.positioning';
 
 @import "common/global";
 @import "components/buttons";
 @import "components/comments";
 @import "components/forms";
 @import "components/grid";
-@import "components/wp-classes";
+//@import "components/wp-classes";
 @import "layouts/header";
 @import "layouts/hero";
 @import "layouts/sidebar";
