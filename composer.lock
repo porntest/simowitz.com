@@ -4,6 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
+    "hash": "c4955ec5c1668d09cf41ee29306517d8",
     "content-hash": "670055a33cb8395bc740a9bf4a0de9cd",
     "packages": [
         {
@@ -119,7 +120,7 @@
                 "zend",
                 "zikula"
             ],
-            "time": "2016-04-13T19:46:30+00:00"
+            "time": "2016-04-13 19:46:30"
         },
         {
             "name": "jjgrainger/posttypes",
@@ -157,7 +158,7 @@
             ],
             "description": "A single class to help you build more advanced custom post types quickly.",
             "homepage": "https://github.com/jjgrainger/posttype",
-            "time": "2016-08-16T12:45:44+00:00"
+            "time": "2016-08-16 12:45:44"
         },
         {
             "name": "johnpbloch/wordpress",
@@ -194,7 +195,7 @@
                 "blog",
                 "cms"
             ],
-            "time": "2016-12-06T18:46:46+00:00"
+            "time": "2016-12-06 18:46:46"
         },
         {
             "name": "johnpbloch/wordpress-core-installer",
@@ -242,7 +243,7 @@
             "keywords": [
                 "wordpress"
             ],
-            "time": "2015-06-11T15:15:30+00:00"
+            "time": "2015-06-11 15:15:30"
         },
         {
             "name": "oscarotero/env",
@@ -284,7 +285,7 @@
             "keywords": [
                 "env"
             ],
-            "time": "2016-05-08T17:14:32+00:00"
+            "time": "2016-05-08 17:14:32"
         },
         {
             "name": "philippbaschke/acf-pro-installer",
@@ -340,7 +341,7 @@
                 "wordpress",
                 "wp"
             ],
-            "time": "2016-07-20T10:19:36+00:00"
+            "time": "2016-07-20 10:19:36"
         },
         {
             "name": "roots/wp-password-bcrypt",
@@ -397,7 +398,7 @@
             "keywords": [
                 "wordpress wp bcrypt password"
             ],
-            "time": "2016-03-01T16:27:06+00:00"
+            "time": "2016-03-01 16:27:06"
         },
         {
             "name": "vlucas/phpdotenv",
@@ -447,7 +448,7 @@
                 "env",
                 "environment"
             ],
-            "time": "2016-09-01T10:05:43+00:00"
+            "time": "2016-09-01 10:05:43"
         },
         {
             "name": "wpackagist-plugin/formidable",
@@ -533,7 +534,7 @@
                 "nginx",
                 "php"
             ],
-            "time": "2016-12-09T19:37:38+00:00"
+            "time": "2016-12-09 19:37:38"
         },
         {
             "name": "squizlabs/php_codesniffer",
@@ -611,7 +612,7 @@
                 "phpcs",
                 "standards"
             ],
-            "time": "2016-11-30T04:02:31+00:00"
+            "time": "2016-11-30 04:02:31"
         }
     ],
     "aliases": [],
