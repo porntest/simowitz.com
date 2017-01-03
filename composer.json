@@ -59,7 +59,7 @@
     "jjgrainger/posttypes": "^1.0",
     "advanced-custom-fields/advanced-custom-fields-pro": "*",
     "wpackagist-plugin/formidable": "2.02.12",
-    "wpackagist-plugin/sendgrid-email-delivery-simplified": "^1.10"
+    "wpackagist-plugin/postman-smtp": "1.7.2"
   },
   "require-dev": {
     "squizlabs/php_codesniffer": "^2.5.1",

@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "content-hash": "fc60f03e7e7aa4f530220bcc5d2cfd8d",
+    "content-hash": "670055a33cb8395bc740a9bf4a0de9cd",
     "packages": [
         {
             "name": "advanced-custom-fields/advanced-custom-fields-pro",
@@ -470,16 +470,16 @@
             "homepage": "https://wordpress.org/plugins/formidable/"
         },
         {
-            "name": "wpackagist-plugin/sendgrid-email-delivery-simplified",
-            "version": "1.10.3",
+            "name": "wpackagist-plugin/postman-smtp",
+            "version": "1.7.2",
             "source": {
                 "type": "svn",
-                "url": "https://plugins.svn.wordpress.org/sendgrid-email-delivery-simplified/",
-                "reference": "trunk"
+                "url": "https://plugins.svn.wordpress.org/postman-smtp/",
+                "reference": "tags/1.7.2"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://downloads.wordpress.org/plugin/sendgrid-email-delivery-simplified.zip",
+                "url": "https://downloads.wordpress.org/plugin/postman-smtp.1.7.2.zip",
                 "reference": null,
                 "shasum": null
             },
@@ -487,7 +487,7 @@
                 "composer/installers": "~1.0"
             },
             "type": "wordpress-plugin",
-            "homepage": "https://wordpress.org/plugins/sendgrid-email-delivery-simplified/"
+            "homepage": "https://wordpress.org/plugins/postman-smtp/"
         }
     ],
     "packages-dev": [
