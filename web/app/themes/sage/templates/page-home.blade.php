@@ -57,4 +57,5 @@
       </div>
       @endwhile
     @endif
+    <?php echo FrmFormsController::get_form_shortcode( array( 'id' => 2, 'title' => false, 'description' => false ) ); ?>
 @endsection
