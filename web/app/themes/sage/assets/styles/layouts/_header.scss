@@ -58,7 +58,7 @@
 .sidebar {
   @extend %col-md-6;
 }
-.menu-main-menu-container {
+.menu-main-menu-container:not(.mm-panel) {
   ul {
     margin: 0;
     padding: 0;
