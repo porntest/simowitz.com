@@ -1,0 +1,93 @@
+.process {
+  @extend %row;
+  flex-direction: column;
+  align-items: flex-start;
+  width: 100%;
+  background-color: black;
+  overflow: hidden;
+  padding: 32px 0;
+  background-size: cover;
+}
+.process__step--right {
+  align-self: flex-end;
+  @media (min-width: map-get($grid-breakpoints, md)) {
+    padding-right: 50px;
+    &:before {
+      content: '';
+      position: absolute;
+      height: 50%;
+      width: 160%;
+      transform: skew(30deg,0);
+      background-color: black;
+      border-bottom: 2px solid $gold;
+      border-left: 2px solid $gold;
+      z-index: -1;
+      top: 50%;
+      right: -30%;
+    }
+    &:after {
+      content: '';
+      position: absolute;
+      height: 50%;
+      width: 160%;
+      transform: skew(-30deg,0);
+      background-color: black;
+      border-top: 2px solid $gold;
+      border-left: 2px solid $gold;
+      z-index: -1;
+      bottom: 50%;
+      right: -30%;
+    }
+  }
+}
+.process__step--left{
+  @media (min-width: map-get($grid-breakpoints, md)) {
+    padding-left: 50px;
+    &:before {
+      content: '';
+      position: absolute;
+      height: 50%;
+      width: 160%;
+      transform: skew(-30deg,0);
+      background-color: black;
+      border-bottom: 2px solid $gold;
+      border-right: 2px solid $gold;
+      z-index: -1;
+      top: 50%;
+      right: -30%;
+    }
+    &:after {
+      content: '';
+      position: absolute;
+      height: 50%;
+      width: 160%;
+      transform: skew(30deg,0);
+      background-color: black;
+      border-top: 2px solid $gold;
+      border-right: 2px solid $gold;
+      z-index: -1;
+      bottom: 50%;
+      right: -30%;
+    }
+  }
+
+}
+.process__step {
+  position: relative;
+  background-color: black;
+  color: white;
+  z-index: 0;
+  padding: 16px;
+  border-bottom: 2px solid $gold;
+  border-top: 2px solid $gold;
+  p {
+    line-height: 1.50em;
+    font-family: 'Cabin', sans-serif;
+  }
+  @media (min-width: map-get($grid-breakpoints, md)) {
+    max-width: 500px;
+    p {
+      font-size: 1.15em;
+    }
+  }
+}
