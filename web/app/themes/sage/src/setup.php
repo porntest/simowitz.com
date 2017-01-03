@@ -38,7 +38,7 @@ sage('blade')->compiler()->directive('asset', function ($asset) {
  */
 add_action('wp_enqueue_scripts', function () {
     wp_enqueue_style('sage/main.css', asset_path('styles/main.css'), false, null);
-    wp_enqueue_style('google-fonts', 'https://fonts.googleapis.com/css?family=Montserrat|Merriweather|Open+Sans+Condensed:300', false, null);
+    wp_enqueue_style('google-fonts', 'https://fonts.googleapis.com/css?family=Montserrat|Merriweather|Open+Sans+Condensed:300|Cabin', false, null);
     wp_enqueue_script('sage/main.js', asset_path('scripts/main.js'), ['jquery'], null, true);
 }, 100);
 
