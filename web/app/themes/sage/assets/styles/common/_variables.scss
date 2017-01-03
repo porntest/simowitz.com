@@ -17,6 +17,7 @@ $color2: rgba(37, 35, 35, 1);
 $color3: rgba(80, 81, 79, 1);
 $color4: rgba(180, 173, 234, 1);
 $color5: rgba(253, 255, 247, 1);
+$color5: #422517;
 
 // Global options
 $enable-flex:           true;
@@ -29,8 +30,10 @@ $sidebar-sm-columns:    4;
 $fa-font-path:          '~font-awesome/fonts';
 
 // Hamburger variables
-$hamburger-layer-width: 20px;
-$hamburger-layer-spacing: 3px;
+$hamburger-layer-width: 24px;
+$hamburger-layer-height: 3px;
+$hamburger-layer-spacing: 5px;
+$hamburger-layer-color: $gold;
 
 // Menu
 // $mm_backgroundColor: url('../images/dark-leather.png'), $color2; 

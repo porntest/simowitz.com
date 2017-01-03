@@ -9,6 +9,7 @@
 @import "~jquery.mmenu/src/css/jquery.mmenu.oncanvas";
 @import "~jquery.mmenu/dist/addons/navbars/jquery.mmenu.navbars";
 @import '~jquery.mmenu/dist/extensions/positioning/jquery.mmenu.positioning';
+@import "~animate.css";
 
 @import "common/global";
 @import "components/buttons";
@@ -16,6 +17,8 @@
 @import "components/forms";
 @import "components/grid";
 //@import "components/wp-classes";
+@import "layouts/awards";
+@import "layouts/process";
 @import "layouts/header";
 @import "layouts/hero";
 @import "layouts/sidebar";

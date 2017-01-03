@@ -28,11 +28,11 @@ $grid-breakpoints: (
     @for $i from 1 through $columns {
       %col-#{$size}-#{$i} {
         @media (max-width: $breakpoint) {
-          display: none!important;
+          display: none;
         }
         @media (min-width: $breakpoint) {
           flex-basis: percentage($i / $columns);
-          max-width: percentage($i / $columns);
+          // max-width: percentage($i / $columns);
         }
       }
     }

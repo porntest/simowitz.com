@@ -34,15 +34,27 @@
             setup_postdata($post)
           ?>
           <div class="award">
-            @if(get_field('image')['mime_type'] == 'image/svg+xml')
-              <img class="inject-svg" src="{{get_field('image')['url']}}" alt="{{get_field('image')['alt']}}">
-            @else
+            {{-- @if(get_field('image')['mime_type'] == 'image/svg+xml') --}}
+              {{-- <img class="inject-svg" src="{{get_field('image')['url']}}" alt="{{get_field('image')['alt']}}"> --}}
+            {{-- @else --}}
+              {{-- <img src="{{get_field('image')['url']}}" alt="{{get_field('image')['alt']}}"> --}}
+            {{-- @endif --}}
               <img src="{{get_field('image')['url']}}" alt="{{get_field('image')['alt']}}">
-            @endif
           </div>
           @php(wp_reset_postdata())
         @endif
       @endwhile
     @endif
   </div>
+    @if(have_rows('steps'))
+      @while(have_rows('steps'))
+        @php(the_row())
+      <div class="process" style="background-image: linear-gradient(rgba(0,0,0,0.65), rgba(0,0,0,0.65)), url({{the_sub_field('background_image')}})">
+        <div class="process__step {{get_row_index() % 2 ? 'process__step--left' : 'process__step--right'}}">
+          <h3>{{the_sub_field('title')}}</h3>
+          <p>{{the_sub_field('description')}}</p>
+        </div>
+      </div>
+      @endwhile
+    @endif
 @endsection
