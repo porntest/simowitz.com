@@ -4,7 +4,7 @@
   "description": "WordPress website for Mark Simowitz",
   "main": "index.js",
   "scripts": {
-    "postinstall": "cd web/app/themes/sage && npm install && npm run build:production",
+    "postinstall": "cd web/app/themes/sage && npm install && npm run build:production && composer install",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
