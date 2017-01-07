@@ -1,0 +1,20 @@
+{
+  "name": "simowitz.com",
+  "version": "1.0.0",
+  "description": "WordPress website for Mark Simowitz",
+  "main": "index.js",
+  "scripts": {
+    "postinstall": "cd web/app/themes/sage && npm install && npm build:production",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/DylanSimowitz/simowitz.com.git"
+  },
+  "author": "Dylan Simowitz",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/DylanSimowitz/simowitz.com/issues"
+  },
+  "homepage": "https://github.com/DylanSimowitz/simowitz.com#readme"
+}
