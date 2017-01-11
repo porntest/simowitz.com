@@ -4,8 +4,8 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "c4955ec5c1668d09cf41ee29306517d8",
-    "content-hash": "670055a33cb8395bc740a9bf4a0de9cd",
+    "hash": "e2b8d2599fc584db8778308b9bb01aae",
+    "content-hash": "6177699fb24bd69d11de6a5544e2c113",
     "packages": [
         {
             "name": "advanced-custom-fields/advanced-custom-fields-pro",
@@ -246,6 +246,28 @@
             "time": "2015-06-11 15:15:30"
         },
         {
+            "name": "locomotivemtl/gravityforms",
+            "version": "dev-master",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/locomotivemtl/gravityforms.git",
+                "reference": "6d5f585b47ac54bb20188584617285e309397f46"
+            },
+            "require": {
+                "composer/installers": "~1.0",
+                "php": ">=5.4"
+            },
+            "type": "wordpress-plugin",
+            "extra": {
+                "installer-name": "gravityforms"
+            },
+            "license": [
+                "GPL-3.0"
+            ],
+            "description": "Fork of Gravity Forms repository for Composer usage.",
+            "time": "2016-12-06 16:02:28"
+        },
+        {
             "name": "oscarotero/env",
             "version": "v1.0.2",
             "source": {
@@ -451,26 +473,6 @@
             "time": "2016-09-01 10:05:43"
         },
         {
-            "name": "wpackagist-plugin/formidable",
-            "version": "2.02.12",
-            "source": {
-                "type": "svn",
-                "url": "https://plugins.svn.wordpress.org/formidable/",
-                "reference": "tags/2.02.12"
-            },
-            "dist": {
-                "type": "zip",
-                "url": "https://downloads.wordpress.org/plugin/formidable.2.02.12.zip",
-                "reference": "tags/2.02.12",
-                "shasum": null
-            },
-            "require": {
-                "composer/installers": "~1.0"
-            },
-            "type": "wordpress-plugin",
-            "homepage": "https://wordpress.org/plugins/formidable/"
-        },
-        {
             "name": "wpackagist-plugin/postman-smtp",
             "version": "1.7.2",
             "source": {
@@ -481,7 +483,7 @@
             "dist": {
                 "type": "zip",
                 "url": "https://downloads.wordpress.org/plugin/postman-smtp.1.7.2.zip",
-                "reference": null,
+                "reference": "tags/1.7.2",
                 "shasum": null
             },
             "require": {
@@ -617,7 +619,9 @@
     ],
     "aliases": [],
     "minimum-stability": "stable",
-    "stability-flags": [],
+    "stability-flags": {
+        "locomotivemtl/gravityforms": 20
+    },
     "prefer-stable": false,
     "prefer-lowest": false,
     "platform": {

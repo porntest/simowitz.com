@@ -66,3 +66,8 @@ add_filter( 'upload_mimes', function ($mimes) {
   $mimes['svg'] = 'image/svg+xml';
   return $mimes;
 });
+
+/**
+ * Allow gravityform labels to be hidden 
+ */
+add_filter( 'gform_enable_field_label_visibility_settings', '__return_true' );

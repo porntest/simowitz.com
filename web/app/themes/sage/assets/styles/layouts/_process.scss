@@ -1,85 +1,85 @@
+.process-container {
+  // background-color: #999;
+}
 .process {
   @extend %row;
   flex-direction: column;
   align-items: flex-start;
   width: 100%;
-  background-color: black;
+  max-width: 1200px;
+  margin: 0 auto;
+  // border-left: 2px solid $gold;
+  // border-right: 2px solid $gold;
+  background-color: white;
   overflow: hidden;
-  padding: 32px 0;
+  padding: 20px;
   background-size: cover;
 }
 .process__step--right {
   align-self: flex-end;
   @media (min-width: map-get($grid-breakpoints, md)) {
     padding-right: 50px;
-    &:before {
-      content: '';
-      position: absolute;
-      height: 50%;
-      width: 160%;
-      transform: skew(30deg,0);
-      background-color: black;
-      border-bottom: 2px solid $gold;
-      border-left: 2px solid $gold;
-      z-index: -1;
-      top: 50%;
-      right: -30%;
-    }
+    &:before,
     &:after {
       content: '';
       position: absolute;
       height: 50%;
-      width: 160%;
-      transform: skew(-30deg,0);
-      background-color: black;
-      border-top: 2px solid $gold;
-      border-left: 2px solid $gold;
+      width: 145%;
+      transform: skew(30deg,0);
+      background-color: white;
+      border: 2px solid $gold;
       z-index: -1;
-      bottom: 50%;
       right: -30%;
+    }
+    &:before {
+      border-top: none;
+      top: 50%;
+    }
+    &:after {
+      transform: skew(-30deg,0);
+      bottom: 50%;
+      border-bottom: none;
     }
   }
 }
 .process__step--left{
   @media (min-width: map-get($grid-breakpoints, md)) {
     padding-left: 50px;
-    &:before {
-      content: '';
-      position: absolute;
-      height: 50%;
-      width: 160%;
-      transform: skew(-30deg,0);
-      background-color: black;
-      border-bottom: 2px solid $gold;
-      border-right: 2px solid $gold;
-      z-index: -1;
-      top: 50%;
-      right: -30%;
-    }
+    &:before,
     &:after {
       content: '';
       position: absolute;
       height: 50%;
-      width: 160%;
-      transform: skew(30deg,0);
-      background-color: black;
-      border-top: 2px solid $gold;
-      border-right: 2px solid $gold;
+      width: 145%;
+      transform: skew(-30deg,0);
+      background-color: white;
+      border: 2px solid $gold;
       z-index: -1;
-      bottom: 50%;
       right: -30%;
     }
+    &:before {
+      border-top: none;
+      top: 50%;
+    }
+    &:after {
+      transform: skew(30deg,0);
+      border-bottom: none;
+      bottom: 50%;
+    }
   }
-
 }
 .process__step {
   position: relative;
-  background-color: black;
-  color: white;
+  background-color: white;
+  color: #999;
   z-index: 0;
-  padding: 16px;
-  border-bottom: 2px solid $gold;
-  border-top: 2px solid $gold;
+  padding: 16px 0;
+  // border-bottom: 2px solid $gold;
+  // border-top: 2px solid $gold;
+  h3 {
+    color: #666;
+    border-bottom: 4px solid $gold;
+  }
   p {
     line-height: 1.50em;
     font-family: 'Cabin', sans-serif;
