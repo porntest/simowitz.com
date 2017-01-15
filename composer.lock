@@ -4,8 +4,8 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "e2b8d2599fc584db8778308b9bb01aae",
-    "content-hash": "6177699fb24bd69d11de6a5544e2c113",
+    "hash": "58702467d331795bb2c51cd1ee642e8b",
+    "content-hash": "4558c7d5705b901ac85fc3b3d5905b78",
     "packages": [
         {
             "name": "advanced-custom-fields/advanced-custom-fields-pro",
@@ -626,7 +626,8 @@
     "prefer-lowest": false,
     "platform": {
         "php": ">=5.6",
-        "ext-mbstring": "^7.0"
+        "ext-mbstring": "^7.0",
+        "ext-mcrypt": "*"
     },
     "platform-dev": []
 }
