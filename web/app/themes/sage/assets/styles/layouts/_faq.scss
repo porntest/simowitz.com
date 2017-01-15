@@ -15,23 +15,28 @@
     margin-bottom: 20px;
   }
   .accordion__panel {
-    padding: 10px 24px;
-    background-color: #bbb;
+    padding: 0px 24px;
+    background-color: #eee;
     p {
       margin: 0;
+      padding: 10px 0;
     }
   }
   .accordion__panel--expanded {
-    transition: 0.4s;
+    transition: all 0.4s;
   }
   .accordion__header {
-    background-color: #eee;
+    background-color: #ddd;
     padding: 8px 0px;
+    transition: 0.2s;
     &:before {
       color: #666;
       line-height: 1.5em;
       margin-right: 24px;
       margin-left: 16px;
+    }
+    &:hover {
+      background-color: #ccc;
     }
     h4 {
       margin: 0;
