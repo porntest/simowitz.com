@@ -104,7 +104,21 @@ add_action('widgets_init', function () {
         'id'            => 'sidebar-primary'
     ] + $config);
     register_sidebar([
+        'name'          => __('Practices', 'sage'),
+        'id'            => 'sidebar-practices'
+    ] + $config);
+    register_sidebar([
         'name'          => __('Footer', 'sage'),
         'id'            => 'sidebar-footer'
     ] + $config);
 });
+
+/**
+ * Hide JQMigrate console messages
+ */
+add_action( 'wp_default_scripts', function( $scripts ) {
+    if ( ! empty( $scripts->registered['jquery'] ) ) {
+        $jquery_dependencies = $scripts->registered['jquery']->deps;
+        $scripts->registered['jquery']->deps = array_diff( $jquery_dependencies, array( 'jquery-migrate' ) );
+    }
+} );

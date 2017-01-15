@@ -4,7 +4,7 @@
 
 $grid-breakpoints: (
   // Extra small screen / phone
-  xs: 0,
+  xs: 0px,
   // Small screen / phone
   sm: 576px,
   // Medium screen / tablet
@@ -17,19 +17,29 @@ $grid-breakpoints: (
 
 @mixin grid($columns) {
   @each $size, $breakpoint in $grid-breakpoints {
+    $index: index(map-keys($grid-breakpoints), $size);
+    $length: length($grid-breakpoints);
+    $next-breakpoint: $breakpoint;
+    @if $length >= $index + 1 {
+      $next-breakpoint: nth(nth($grid-breakpoints, ($index + 1)), 2);
+    }
     %col-#{$size} {
       flex-basis: 0;
       flex-grow: 1;
       max-width: 100%;
-      @media (max-width: $breakpoint) {
+    }
+    %col-#{$size}-hidden-down {
+      @media (max-width: $next-breakpoint) {
+        display: none!important;
+      }
+    }
+    %col-#{$size}-hidden {
+      @media (min-width: $breakpoint) and (max-width: $next-breakpoint) {
         display: none!important;
       }
     }
     @for $i from 1 through $columns {
       %col-#{$size}-#{$i} {
-        @media (max-width: $breakpoint) {
-          display: none;
-        }
         @media (min-width: $breakpoint) {
           flex-basis: percentage($i / $columns);
           // max-width: percentage($i / $columns);

@@ -52,6 +52,7 @@
   }
 }
 .slider__image {
+  @extend %col-sm-hidden-down;
   @extend %col-md;
   max-width: 570px;
   background-color: rgba($gold, 0.75);

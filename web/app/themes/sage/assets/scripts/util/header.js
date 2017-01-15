@@ -1,7 +1,7 @@
 class Sticky {
   constructor(element, trigger) {
     this.element = document.querySelector(element);
-    this.trigger = document.querySelector(trigger);
+    this.trigger = trigger ? document.querySelector(trigger) : undefined;
   }
   init() {
     this.scrollTop = 0;
@@ -23,7 +23,7 @@ class Sticky {
   }
   hideElement() {
     const previousScrollTop = this.scrollTop;
-    const trigger = this.trigger.getBoundingClientRect().bottom;
+    const trigger = this.trigger ? this.trigger.getBoundingClientRect().bottom : 0;
     const elementHeight = this.element.offsetHeight;
 
     // this.resizePlaceholder();

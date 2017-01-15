@@ -1,6 +1,6 @@
 <header class="banner">
   <div class="container">
-    <nav class="nav-primary Fixed">
+    <nav class="header Fixed">
       <button class="nav-button"></button>
       {{-- <div class="phone"> --}}
         {{-- <i class="fa fa-phone"></i> --}}
@@ -21,7 +21,7 @@
           </div>
         {{-- </a> --}}
       </div>
-      <nav class="sidebar">
+      <nav class="nav-primary">
         @if (has_nav_menu('primary_navigation'))
           {!! wp_nav_menu(['theme_location' => 'primary_navigation', 'menu_class' => 'nav']) !!}
         @endif

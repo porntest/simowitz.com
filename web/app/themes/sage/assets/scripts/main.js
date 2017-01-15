@@ -17,6 +17,7 @@ import common from './routes/Common';
 import aboutUs from './routes/About';
 import Hamburger from './components/Hamburger';
 import Sticky from './util/header';
+import Accordion from './util/accordion';
 
 // Use this variable to set up the common and page specific functions. If you
 // rename this variable, you will also need to rename the namespace below.
@@ -56,26 +57,15 @@ jQuery(window).on('load', () => {
   navbar.resizePlaceholder();
 });
 jQuery(document).ready(() => {
+  const mobileMenu = jQuery('.nav-primary');
   svgInjector(document.querySelectorAll('.inject-svg'));
   new Router(routes).loadEvents();
-  navbar = new Sticky('.nav-primary', '.slider');
+  navbar = new Sticky('nav.header', '.slider');
   navbar.init();
-  jQuery('.sidebar').mmenu({
-    // offCanvas: {
-      // position: 'left',
-      // zposition: 'front',
-    // },
-    // navbars: [
-      // {
-        // position: 'top',
-        // content: jQuery('.sidebar__header'),
-        // height: 4,
-      // },
-    // ],
-  }, {
+  mobileMenu.mmenu({}, {
     clone: true,
   });
-  const menuAPI = jQuery('.sidebar').data('mmenu');
+  const menuAPI = jQuery('.nav-primary').data('mmenu');
   new Hamburger('.nav-button', {
     animation: 'squeeze',
     onClick: menuAPI.open,
@@ -86,5 +76,5 @@ jQuery(document).ready(() => {
   menuAPI.bind('closed', () => {
     setTimeout(() => $('.nav-button').removeClass('is-active'), 50);
   });
-  // jQuery('.nav-primary').headroom();
+  new Accordion('.accordion').init();
 });

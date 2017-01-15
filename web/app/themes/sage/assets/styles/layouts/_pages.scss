@@ -1,0 +1,16 @@
+.featured-image {
+  @extend %row;
+  flex-direction: column;
+  height: 600px;
+  width: 100%;
+  background-size: cover;
+  justify-content: center;
+}
+.page-title {
+  background: linear-gradient(to right, black, rgba(255,255,255,0));
+  margin: 0;
+  margin-bottom: 24px;
+  font-size: 8em;
+  color: white;
+  padding-left: 40px;
+}

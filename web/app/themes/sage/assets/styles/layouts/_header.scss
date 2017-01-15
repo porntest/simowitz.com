@@ -1,8 +1,8 @@
-.nav-primary {
+nav.header {
   @extend %row;
   justify-content: space-between;
   align-items: center;
-  box-shadow: 0px 2px 8px 0px rgba(0,0,0,0.65);
+  box-shadow: 0px 2px 8px 0px rgba(0,0,0,0.35);
   // border-bottom: 2px solid black;
   position: fixed;
   top: 0;
@@ -14,7 +14,9 @@
 }
 .brand {
   @extend %row;
-  @extend %col-xs-7;
+  @extend %col-xs-8;
+  @extend %col-sm-6;
+  @extend %col-md-4;
   align-items: center;
   // align-self: center;
   // transform: skew(-20deg);
@@ -55,8 +57,12 @@
 .nav-button {
   outline: none;
 }
-.sidebar {
+.main-menu {
   @extend %col-md-6;
+}
+.nav-primary {
+  @extend %col-xs-8;
+  max-width: 800px;
 }
 .menu-main-menu-container:not(.mm-panel) {
   @extend %row;
@@ -145,7 +151,7 @@
   }
 }
 @media (max-width: map-get($grid-breakpoints, md)) {
-  .sidebar {
+  .nav-primary {
     display: none !important;
     &.mm-menu {
       display: inherit !important;
@@ -153,7 +159,7 @@
   }
 }
 @media (min-width: map-get($grid-breakpoints, md)) {
-  .sidebar.mm-menu, 
+  .nav-primary.mm-menu, 
   .nav-button {
     display: none !important;
   }

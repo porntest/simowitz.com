@@ -1,27 +1,34 @@
 @extends('layouts.base')
 
 @section('content')
-  <div class="slider"> 
-    @if(have_rows('slider'))
-      @while(have_rows('slider'))
+    {{-- @if(get_field('select_slider')) --}}
+    <div class="slider"> 
+    @if(have_rows('create_slider', 'option'))
+      @while(have_rows('create_slider', 'option'))
         @php(the_row())
-        <div class="slider__slide" style="background-image: url({{the_sub_field('background_image')}}); flex-direction: {{the_sub_field('image_position')}}">
-          <div class="slider__info-text">
-            <h2>{{the_sub_field('heading')}}</h2>
-            {{the_sub_field('tagline')}}
-            @if(get_sub_field('link'))
-            <div class="slider__CAB">
-              <a href="{{the_sub_field('link')}}" class="btn--action">{{the_sub_field('label')}}</a>
+        @if(get_sub_field('slider_name') == get_field('select_slider'))
+          @while(have_rows('slider', 'option'))
+          @php(the_row())
+            <div class="slider__slide" style="background-image: url({{the_sub_field('background_image')}}); flex-direction: {{the_sub_field('image_position')}}">
+              <div class="slider__info-text">
+                <h2>{{the_sub_field('heading')}}</h2>
+                {{the_sub_field('tagline')}}
+                @if(get_sub_field('link'))
+                <div class="slider__CAB">
+                  <a href="{{the_sub_field('link')}}" class="btn--action">{{the_sub_field('label')}}</a>
+                </div>
+                @endif
+              </div>
+              <div class="slider__image">
+                <img src="{{get_sub_field('image')['url']}}" alt="{{get_sub_field('image')['alt']}}">
+              </div>
             </div>
-            @endif
-          </div>
-          <div class="slider__image">
-            <img src="{{get_sub_field('image')['url']}}" alt="{{get_sub_field('image')['alt']}}">
-          </div>
-        </div>
+          @endwhile
+        @endif
       @endwhile
     @endif
-  </div>
+    </div>
+    {{-- @endif --}}
   <div class="awards">
     @if(have_rows('awards'))
       @while(have_rows('awards'))
@@ -79,9 +86,5 @@
         @endif
       @endwhile
     @endif 
-  </div>
-  <div class="contact">
-    <h2>Free Case Evaluation</h2>
-    @php(gravity_form(1, false, false, false, '', true, 12))
   </div>
 @endsection
