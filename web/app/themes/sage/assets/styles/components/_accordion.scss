@@ -1,0 +1,34 @@
+.accordion__panel {
+  opacity: 0;
+  max-height: 0px;
+}
+.accordion__panel--expanded {
+  opacity: 1;
+  max-height: initial;
+}
+.accordion__header {
+  position: relative;
+  display: flex;
+  align-items: center;
+  &:hover {
+    cursor: pointer;
+  }
+  &:before {
+    font-family: 'Fontawesome';
+    content: '\f0fe';
+    display: inline-block;
+  }
+  h4 {
+    display: inline-block;
+  }
+  // &:before {
+    // content
+  // }
+}
+.accordion__fold--expanded {
+  .accordion__header {
+    &:before {
+      content: '\f146';
+    }
+  }
+}
