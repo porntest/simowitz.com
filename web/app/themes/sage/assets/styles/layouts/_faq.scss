@@ -1,0 +1,43 @@
+.faq-section {
+  @extend %row;
+}
+.process-container {
+  @extend %col-xs;
+}
+
+.faq-container {
+  @extend %col-xs-12;
+  @extend %col-md-8;
+  min-height: 100vh;
+  margin: 0 auto;
+  margin-top: 20px;
+  .accordion__fold {
+    margin-bottom: 20px;
+  }
+  .accordion__panel {
+    padding: 10px 24px;
+    background-color: #bbb;
+    p {
+      margin: 0;
+    }
+  }
+  .accordion__panel--expanded {
+    transition: 0.4s;
+  }
+  .accordion__header {
+    background-color: #eee;
+    padding: 8px 0px;
+    &:before {
+      color: #666;
+      line-height: 1.5em;
+      margin-right: 24px;
+      margin-left: 16px;
+    }
+    h4 {
+      margin: 0;
+      color: #666;
+    }
+  }
+}
+.accordion {
+}
