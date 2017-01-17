@@ -13,3 +13,101 @@
   //@extend .btn;
   //@extend .btn-secondary;
 }
+
+.consultation {
+  @extend %row;
+  flex-wrap: wrap;
+  padding: 10px;
+  // background-size: cover;
+}
+.contact-form_wrapper {
+  @extend %col-xs-12;
+  @extend %col-lg-7;
+  border: 2px solid #666;
+  border-top: none;
+  @media (min-width: map-get($grid-breakpoints, lg)) {
+    border: 2px solid #666;
+    border-left: none;
+  }
+}
+.consultation__text {
+  @extend %col-xs-12;
+  @extend %col-lg-5;
+  border: 2px solid #666;
+  border-bottom: none;
+  background-color: white;
+  padding-left: 8px;
+  @media (min-width: map-get($grid-breakpoints, lg)) {
+    border: 2px solid #666;
+    border-right: none;
+  }
+}
+
+.contact-form {
+  padding: 4px;
+  // background-color: rgba(#ddd, 0.75);
+  background-color: rgba(black, 0.25);
+  .gform_fields {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    @extend %row;
+    flex-wrap: wrap;
+  }
+  .gfield_label {
+    display: none;
+  }
+  .ginput_container {
+    margin: 5px;
+  }
+  .gform_body {
+    width: 100% !important;
+  }
+  .gform_validation_container {
+    display: none;
+  }
+  .gform_footer {
+    display: flex;
+    justify-content: flex-end;
+  }
+  .gfield {
+    @extend %col-xs-12;
+    @extend %col-md-6;
+  }
+  #field_1_5 {
+    @extend %col-md-12;
+  }
+  input[type=text],
+  input[type=tel],
+  input[type=email],
+  textarea {
+    border: 2px solid #666;
+    min-height: 60px;
+    width: 100%;
+    padding-left: 8px;
+    color: #777;
+    font-family: 'Cabin', sans-serif;
+    font-size: 1.2em;
+    &:focus {
+      outline: none;
+    }
+    &::placeholder {
+      color: #777;
+    }
+  }
+  input[type=submit] {
+    background-color: #444;
+    // color: #aaa;
+    color: $gold;
+    border: 2px solid black; 
+    font-size: 1.25em;
+    padding: 16px 32px;
+    border-radius: 4px;
+    margin: 5px;
+    transition: 0.25s;
+    &:hover {
+      color: #333;
+      background-color: #666;
+    }
+  }
+}

@@ -12,10 +12,11 @@
 @import "~animate.css";
 
 @import "common/global";
+@import "common/wordpress";
+@import "components/grid";
 @import "components/buttons";
 @import "components/comments";
 @import "components/forms";
-@import "components/grid";
 @import "components/accordion";
 //@import "components/wp-classes";
 @import "layouts/awards";

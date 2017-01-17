@@ -17,7 +17,7 @@
               {{ get_bloginfo('name', 'display') }}
             @endif
             </p>
-            <p class="brand__slogan">{{the_field('company_slogan', 'options')}}</p>
+            {{-- <p class="brand__slogan">{{the_field('company_slogan', 'options')}}</p> --}}
           </div>
         {{-- </a> --}}
       </div>

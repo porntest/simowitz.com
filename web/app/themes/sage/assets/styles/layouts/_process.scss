@@ -1,19 +1,23 @@
 .process-container {
   // background-color: #999;
+  width: 100%;
+  max-width: map-get($grid-breakpoints, xl);
+  margin: 0 auto;
+  margin-bottom: 40px;
 }
 .process {
   @extend %row;
   flex-direction: column;
   align-items: flex-start;
-  width: 100%;
-  max-width: 1200px;
-  margin: 0 auto;
   // border-left: 2px solid $gold;
   // border-right: 2px solid $gold;
   background-color: white;
   overflow: hidden;
-  padding: 20px;
+  padding: 4px;
   background-size: cover;
+  @media (max-width: map-get($grid-breakpoints, md)) {
+    background-image: none !important;
+  }
 }
 .process__step--right {
   align-self: flex-end;
@@ -27,7 +31,7 @@
       width: 145%;
       transform: skew(30deg,0);
       background-color: white;
-      border: 2px solid $gold;
+      border: 4px solid $gold;
       z-index: -1;
       right: -30%;
     }
@@ -53,7 +57,7 @@
       width: 145%;
       transform: skew(-30deg,0);
       background-color: white;
-      border: 2px solid $gold;
+      border: 4px solid $gold;
       z-index: -1;
       right: -30%;
     }

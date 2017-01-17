@@ -1,10 +1,8 @@
 .accordion__panel {
-  opacity: 0;
-  max-height: 0px;
+  height: 0;
 }
 .accordion__panel--expanded {
-  opacity: 1;
-  max-height: initial;
+  height: auto;
 }
 .accordion__header {
   position: relative;

@@ -5,14 +5,18 @@ class Sticky {
   }
   init() {
     this.scrollTop = 0;
-    window.addEventListener('scroll', this.onScroll.bind(this));
     this.placeholder = this.element.parentNode.appendChild(document.createElement('div'));
-    this.resizePlaceholder();
+    window.addEventListener('scroll', this.onScroll.bind(this));
     window.addEventListener('resize', this.resizePlaceholder.bind(this));
+    window.addEventListener('load', this.onLoad.bind(this));
   }
   resizePlaceholder() {
     const elementHeight = this.element.offsetHeight;
     this.placeholder.style.height = `${elementHeight}px`;
+  }
+  onLoad() {
+    this.resizePlaceholder();
+    this.transitionDuration = this.getTransitionMS();
   }
   onScroll() {
     if (window.requestAnimationFrame) {
@@ -21,12 +25,18 @@ class Sticky {
       setTimeout(this.hideElement.bind(this), 250);
     }
   }
+  getTransitionMS() {
+    const transitionDuration = window.getComputedStyle(this.element).transitionDuration.split(',')[0];
+    const transitionUnits = transitionDuration.match(/s|ms/g)[0];
+    if (transitionUnits === 's') {
+      return transitionDuration.replace(/s/g, '') * 1000;
+    }
+    return transitionDuration.replace(/ms/g, '');
+  }
   hideElement() {
     const previousScrollTop = this.scrollTop;
     const trigger = this.trigger ? this.trigger.getBoundingClientRect().bottom : 0;
     const elementHeight = this.element.offsetHeight;
-
-    // this.resizePlaceholder();
 
     if (window.pageYOffset) {
       this.scrollTop = window.pageYOffset;
@@ -35,9 +45,17 @@ class Sticky {
     }
 
     if (this.scrollTop > previousScrollTop && trigger - elementHeight <= 0) {
+      // Hide Element
+      this.element.classList.add('header--hidden');
       this.element.style.transform = `translateY(-${elementHeight}px)`;
+      // setTimeout(() => {
+        // // this.element.style.boxShadow = 'none';
+      // }, this.transitionDuration);
     } else {
+      // Show Element
+      this.element.classList.remove('header--hidden');
       this.element.style.transform = '';
+      // this.element.style.boxShadow = '';
     }
   }
 }

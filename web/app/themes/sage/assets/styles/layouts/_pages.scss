@@ -7,10 +7,23 @@
   justify-content: center;
 }
 .page-title {
-  background: linear-gradient(to right, black, rgba(255,255,255,0));
+  background: linear-gradient(to right, rgba(#000,0.85), rgba(#000,0.85));
+  padding: 24px 0;
   margin: 0;
   margin-bottom: 24px;
   font-size: 8em;
   color: white;
   padding-left: 40px;
+}
+section.main {
+  @extend %row;
+  // h2 {
+    // border-bottom: 4px solid $gold;
+  // }
+  article {
+    @extend %col-xs-12;
+    @extend %col-md-8;
+    margin: 0 auto;
+    margin-top: 20px;
+  }
 }

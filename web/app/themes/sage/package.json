@@ -79,6 +79,7 @@
     "jquery": "1.12.4 - 3",
     "jquery.mmenu": "^5.7.8",
     "normalize.css": "^5.0.0",
+    "rx": "^4.1.0",
     "svg-injector": "^1.1.3"
   }
 }
