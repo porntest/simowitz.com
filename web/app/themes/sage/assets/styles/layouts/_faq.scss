@@ -16,19 +16,34 @@
   }
   .accordion__panel {
     padding: 0px 24px;
+    position: relative;
+    z-index: 0;
     background-color: #eee;
-    opacity: 0;
-    transform: scale(0);
-    // transition: all 0.4s;
+    &:after {
+      opacity: 1;
+      content: '';
+      display: inline-block;
+      position: absolute;
+      left: 0%;
+      bottom: 0%;
+      height: 100%;
+      width: 100%;
+      background-color: white;
+      transform: scaleY(1);
+      transform-origin: bottom;
+      transition: transform 0.4s;
+    }
     p {
       margin: 0;
       padding: 10px 0;
+      z-index: -1;
     }
   }
   .accordion__panel--expanded {
-    transform: scale(1);
-    opacity: 1;
-    transition: all 0.4s;
+    &:after {
+      transform: scaleY(0);
+      transition: transform 0.4s;
+    }
   }
   .accordion__header {
     background-color: #ddd;
@@ -44,7 +59,7 @@
       background-color: #ccc;
     }
     h4 {
-      pointer-events: none;
+      // pointer-events: none;
       margin: 0;
       color: #666;
     }

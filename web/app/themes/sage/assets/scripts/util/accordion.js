@@ -13,16 +13,41 @@ class Fold {
   set open(value) {
     this.state.open = value;
     if (this.state.open) {
-      this.expand();
+      this.element.dispatchEvent(this.events.open);
     } else {
-      this.collapse();
+      this.element.dispatchEvent(this.events.close);
     }
   }
   init() {
     this.element.classList.add('accordion__fold');
     this.panel.classList.add('accordion__panel');
     this.header.classList.add('accordion__header');
-    // this.header.addEventListener('click', () => { this.open = !this.state.open; });
+    this.element.addEventListener('open', this.onOpen.bind(this));
+    this.element.addEventListener('close', this.onClose.bind(this));
+    this.header.addEventListener('click', this.onClick.bind(this));
+    this.events = {
+      open: new CustomEvent('open', {
+        detail: {
+          fold: this,
+        },
+        bubbles: true,
+      }),
+      close: new CustomEvent('close', {
+        detail: {
+          fold: this,
+        },
+        bubbles: true,
+      }),
+    };
+  }
+  onOpen() {
+    this.expand();
+  }
+  onClose() {
+    this.collapse();
+  }
+  onClick() {
+    this.open = !this.state.open;
   }
   collapse() {
     this.element.classList.remove('accordion__fold--expanded');
@@ -43,18 +68,26 @@ class Accordion {
   }
   init() {
     this.createFolds();
-    this.element.addEventListener('click', this.onClick.bind(this));
+    // this.element.addEventListener('click', this.onClick.bind(this));
+    this.element.addEventListener('open', this.onOpen.bind(this));
   }
-  onClick(e) {
+  onOpen(e) {
+    // let headerHeights = 0;
     this.folds.filter((fold) => {
-      if (fold.header === e.target) {
-        fold.open = !fold.open;//eslint-disable-line
-        return fold;
+      if (fold !== e.detail.fold) {
+        fold.open = false;//eslint-disable-line
+        return false;
       }
-      fold.open = false;//eslint-disable-line
-      return false;
+      return true;
     });
+    console.log(e.detail.fold);
+    // this.moveFolds();
   }
+  // moveFolds() {
+    // let headerHeights;
+    // this.folds.filter((fold) => {
+    // });
+  // }
   createFolds() {
     for (let i = 0; i < this.element.children.length; i += 1) {
       const fold = new Fold(this.element.children[i]);
