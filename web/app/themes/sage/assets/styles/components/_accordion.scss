@@ -1,14 +1,14 @@
 .accordion {
-  overflow: hidden;
+  // overflow: hidden;
 }
 .accordion__panel {
-  // height: 0;
+  height: 0px;
   // opacity: 0;
   // transform: scaleY(0)
 }
 .accordion__panel--expanded {
   // opacity: 1;
-  // height: auto;
+  height: auto;
   // transform: scaleY(1)
 }
 .accordion__header {

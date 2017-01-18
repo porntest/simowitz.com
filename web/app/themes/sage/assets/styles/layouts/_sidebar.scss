@@ -1,18 +1,25 @@
 .sidebar {
   @extend %col-sm-hidden-down;
   @extend %col-md-2;
-  min-width: 200px;
-  background-color: #ddd;
+  min-width: 265px;
+  background-color: lighten($purple, 50%);
   min-height: 100vh;
   font-family: 'Open Sans Condensed', sans-serif;
   font-size: 1.75em;
+  @media (max-width: 864px) {
+    min-width: 220px;
+  }
   ul {
     list-style: none;
     margin: 0;
+    @media (max-width: 864px) {
+      padding: 0;
+    }
   }
   a {
     position: relative;
     text-decoration: none;
+    padding-left: 8px;
     color: #666;
     line-height: 80px;
     height: 80px;

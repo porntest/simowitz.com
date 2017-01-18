@@ -80,7 +80,6 @@ class Accordion {
       }
       return true;
     });
-    console.log(e.detail.fold);
     // this.moveFolds();
   }
   // moveFolds() {
