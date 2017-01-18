@@ -42,6 +42,7 @@ class Fold {
   }
   onOpen() {
     this.expand();
+    this.element.style.transform = 'translateY(0)';
   }
   onClose() {
     this.collapse();
@@ -70,17 +71,25 @@ class Accordion {
     this.createFolds();
     // this.element.addEventListener('click', this.onClick.bind(this));
     this.element.addEventListener('open', this.onOpen.bind(this));
+    this.applyTransforms();
+  }
+  applyTransforms() {
+    let previousFold = 0;
+    let headerHeights = 0;
+    this.folds.forEach((fold) => {
+      fold.element.style.transform = `translateY(-${previousFold}px)`;//eslint-disable-line
+      previousFold += fold.panel.offsetHeight;
+      headerHeights += fold.header.offsetHeight;
+    });
+    this.element.style.height = `${headerHeights}px`;
   }
   onOpen(e) {
     // let headerHeights = 0;
-    this.folds.filter((fold) => {
+    this.folds.forEach((fold) => {
       if (fold !== e.detail.fold) {
         fold.open = false;//eslint-disable-line
-        return false;
       }
-      return true;
     });
-    console.log(e.detail.fold);
     // this.moveFolds();
   }
   // moveFolds() {
