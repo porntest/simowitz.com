@@ -97,7 +97,7 @@ nav.header {
   > ul {
     display: inline-flex;
     justify-content: space-around;
-    background-color: #ddd;
+    background-color: $purple;
     width: 100%;
     // Top list items
     > li {
@@ -108,6 +108,7 @@ nav.header {
       cursor: pointer;
       // background-color: #ddd;
       > a {
+        color: white;
         height: 80px;
         line-height: 80px;
         display: block;
