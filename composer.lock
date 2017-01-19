@@ -4,8 +4,8 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "ac3af50347e9c6a2b1a598fb008ce603",
-    "content-hash": "e04040349b6aac856276877910708343",
+    "hash": "52b223af23ca7d2a5c609c2d6b940b63",
+    "content-hash": "7d04a18714ca6e6344dbd3c7fa1293d8",
     "packages": [
         {
             "name": "advanced-custom-fields/advanced-custom-fields-pro",
@@ -247,16 +247,16 @@
         },
         {
             "name": "kasparsd/minit",
-            "version": "dev-patch-3",
+            "version": "dev-master",
             "source": {
                 "type": "git",
-                "url": "https://github.com/szepeviktor/minit.git",
-                "reference": "b182a704ea9407cdd2597beebafea5169b410e66"
+                "url": "https://github.com/kasparsd/minit.git",
+                "reference": "d8344811dc1452fa8b9645d785b5e7cf1761f4cc"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/szepeviktor/minit/zipball/b182a704ea9407cdd2597beebafea5169b410e66",
-                "reference": "b182a704ea9407cdd2597beebafea5169b410e66",
+                "url": "https://api.github.com/repos/kasparsd/minit/zipball/d8344811dc1452fa8b9645d785b5e7cf1761f4cc",
+                "reference": "d8344811dc1452fa8b9645d785b5e7cf1761f4cc",
                 "shasum": ""
             },
             "require": {
@@ -264,6 +264,7 @@
                 "php": ">=5.4.0"
             },
             "type": "wordpress-plugin",
+            "notification-url": "https://packagist.org/downloads/",
             "license": [
                 "GPLv2 or later"
             ],
@@ -271,28 +272,24 @@
                 {
                     "name": "Kaspars Dambis",
                     "email": "hi@kaspars.net",
-                    "homepage": "https://kaspars.net"
+                    "homepage": "http://kaspars.net"
                 }
             ],
             "description": "A WordPress plugin to combine CSS and Javascript files",
             "homepage": "https://github.com/kasparsd/minit",
             "keywords": [
-                "WordPress",
+                "JS",
                 "combine",
                 "concatenate",
                 "css",
-                "js",
                 "minify",
                 "optimization",
                 "performance",
                 "plugins",
-                "speed"
+                "speed",
+                "wordpress"
             ],
-            "support": {
-                "issues": "https://github.com/kasparsd/minit/issues",
-                "source": "https://github.com/kasparsd/minit"
-            },
-            "time": "2016-12-08 03:58:59"
+            "time": "2016-11-30 11:44:28"
         },
         {
             "name": "locomotivemtl/gravityforms",
