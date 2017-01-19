@@ -71,31 +71,3 @@ add_filter( 'upload_mimes', function ($mimes) {
  * Allow gravityform labels to be hidden 
  */
 add_filter( 'gform_enable_field_label_visibility_settings', '__return_true' );
-
-/**
- * Replace minit paths
- */
-add_filter( 'minit-asset-local-path', 'minit_custom_content_dir', 10, 2 );
-function minit_custom_content_dir( $local_path, $item_url ) {
-
-    // Bail out if get_local_path_from_url() succeeded
-    if ( false !== $local_path ) {
-        return $local_path;
-    }
-
-    // Replace custom MU plugin URL
-    $full_path = str_replace( WPMU_PLUGIN_URL, WPMU_PLUGIN_DIR, $item_url );
-    // Replace custom plugin URL
-    $full_path = str_replace( plugins_url(), WP_PLUGIN_DIR, $full_path );
-    // Replace custom theme URL
-    $full_path = str_replace( get_theme_root_uri(), get_theme_root(), $full_path );
-    // Replace remaining custom wp-content URL
-    $full_path = str_replace( content_url(), WP_CONTENT_DIR, $full_path );
-
-    if ( file_exists( $full_path ) ) {
-        return $full_path;
-    }
-
-    return false;
-
-}
