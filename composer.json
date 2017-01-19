@@ -54,7 +54,11 @@
         "type": "wordpress-plugin",
         "version": "2.1.1"
       }
-    } 
+    },
+    {
+      "type": "vcs",
+      "url": "https://github.com/szepeviktor/minit"
+    }
   ],
   "require": {
     "php": ">=5.6",
@@ -69,7 +73,7 @@
     "wpackagist-plugin/postman-smtp": "1.7.2",
     "locomotivemtl/gravityforms": "dev-master",
     "wpackagist-plugin/gravity-forms-no-captcha-recaptcha": "^1.0",
-    "kasparsd/minit": "dev-master"
+    "kasparsd/minit": "dev-patch-3"
   },
   "require-dev": {
     "squizlabs/php_codesniffer": "^2.5.1",
