@@ -68,7 +68,8 @@
     "advanced-custom-fields/advanced-custom-fields-pro": "*",
     "wpackagist-plugin/postman-smtp": "1.7.2",
     "locomotivemtl/gravityforms": "dev-master",
-    "wpackagist-plugin/gravity-forms-no-captcha-recaptcha": "^1.0"
+    "wpackagist-plugin/gravity-forms-no-captcha-recaptcha": "^1.0",
+    "kasparsd/minit": "dev-master"
   },
   "require-dev": {
     "squizlabs/php_codesniffer": "^2.5.1",

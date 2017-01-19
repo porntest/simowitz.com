@@ -4,8 +4,8 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "0951042322731850602b534b8f4a8886",
-    "content-hash": "6a2f163d70a718c9eaf41b88d5fc86bd",
+    "hash": "eed9332f5d3e06c3c2944c122c4e14d9",
+    "content-hash": "b9a16839e1622bf960b4cf9f4de7baf7",
     "packages": [
         {
             "name": "advanced-custom-fields/advanced-custom-fields-pro",
@@ -244,6 +244,52 @@
                 "wordpress"
             ],
             "time": "2015-06-11 15:15:30"
+        },
+        {
+            "name": "kasparsd/minit",
+            "version": "dev-master",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/kasparsd/minit.git",
+                "reference": "d4f8fd302f3aa706532724472d6d01ddf3b15c18"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/kasparsd/minit/zipball/d4f8fd302f3aa706532724472d6d01ddf3b15c18",
+                "reference": "d4f8fd302f3aa706532724472d6d01ddf3b15c18",
+                "shasum": ""
+            },
+            "require": {
+                "composer/installers": "~1.0",
+                "php": ">=5.4.0"
+            },
+            "type": "wordpress-plugin",
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "GPLv2 or later"
+            ],
+            "authors": [
+                {
+                    "name": "Kaspars Dambis",
+                    "email": "hi@kaspars.net",
+                    "homepage": "http://kaspars.net"
+                }
+            ],
+            "description": "A WordPress plugin to combine CSS and Javascript files",
+            "homepage": "https://github.com/kasparsd/minit",
+            "keywords": [
+                "JS",
+                "combine",
+                "concatenate",
+                "css",
+                "minify",
+                "optimization",
+                "performance",
+                "plugins",
+                "speed",
+                "wordpress"
+            ],
+            "time": "2016-10-18 08:40:48"
         },
         {
             "name": "locomotivemtl/gravityforms",
@@ -640,7 +686,8 @@
     "aliases": [],
     "minimum-stability": "stable",
     "stability-flags": {
-        "locomotivemtl/gravityforms": 20
+        "locomotivemtl/gravityforms": 20,
+        "kasparsd/minit": 20
     },
     "prefer-stable": false,
     "prefer-lowest": false,
