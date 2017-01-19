@@ -4,8 +4,8 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "f2311c447f9a8f3f52362feeadb86f78",
-    "content-hash": "1ad0904da1bb863d2983e62e27333cb5",
+    "hash": "0951042322731850602b534b8f4a8886",
+    "content-hash": "6a2f163d70a718c9eaf41b88d5fc86bd",
     "packages": [
         {
             "name": "advanced-custom-fields/advanced-custom-fields-pro",
@@ -473,6 +473,26 @@
             "time": "2016-09-01 10:05:43"
         },
         {
+            "name": "wpackagist-plugin/gravity-forms-no-captcha-recaptcha",
+            "version": "1.0.7",
+            "source": {
+                "type": "svn",
+                "url": "https://plugins.svn.wordpress.org/gravity-forms-no-captcha-recaptcha/",
+                "reference": "tags/1.0.7"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://downloads.wordpress.org/plugin/gravity-forms-no-captcha-recaptcha.1.0.7.zip",
+                "reference": "tags/1.0.7",
+                "shasum": null
+            },
+            "require": {
+                "composer/installers": "~1.0"
+            },
+            "type": "wordpress-plugin",
+            "homepage": "https://wordpress.org/plugins/gravity-forms-no-captcha-recaptcha/"
+        },
+        {
             "name": "wpackagist-plugin/postman-smtp",
             "version": "1.7.2",
             "source": {
@@ -626,8 +646,7 @@
     "prefer-lowest": false,
     "platform": {
         "php": ">=5.6",
-        "ext-mbstring": "^7.0",
-        "ext-mcrypt": "*"
+        "ext-mbstring": "^7.0"
     },
     "platform-dev": []
 }
