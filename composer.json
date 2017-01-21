@@ -46,18 +46,6 @@
           "composer/installers": "^1.0"
         }
       }
-    },
-    {
-      "type": "git",
-      "url": "https://github.com/locomotivemtl/gravityforms.git",
-      "package": {
-        "type": "wordpress-plugin",
-        "version": "2.1.1"
-      }
-    },
-    {
-      "type": "vcs",
-      "url": "https://github.com/szepeviktor/minit"
     }
   ],
   "require": {
@@ -71,9 +59,7 @@
     "jjgrainger/posttypes": "^1.0",
     "advanced-custom-fields/advanced-custom-fields-pro": "*",
     "wpackagist-plugin/postman-smtp": "1.7.2",
-    "locomotivemtl/gravityforms": "dev-master",
-    "wpackagist-plugin/gravity-forms-no-captcha-recaptcha": "^1.0",
-    "kasparsd/minit": "dev-wp-content2"
+    "wpackagist-plugin/ninja-forms": "3.0.24"
   },
   "require-dev": {
     "squizlabs/php_codesniffer": "^2.5.1",
