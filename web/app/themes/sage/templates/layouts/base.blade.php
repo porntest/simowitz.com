@@ -26,7 +26,6 @@
         <h3>{{the_field('contact_form_title', 'option')}}</h3>
         <p>{{the_field('contact_form_text', 'option')}}</p>
       </div>
-      @php(gravity_form(1, false, false, false, '', true))
     </div>
     @php(do_action('get_footer'))
     @include('partials.footer')
