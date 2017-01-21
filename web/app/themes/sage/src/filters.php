@@ -1,6 +1,6 @@
 <?php
 
-namespace App;
+namespace App {
 
 /**
  * Add <body> classes
@@ -71,3 +71,27 @@ add_filter( 'upload_mimes', function ($mimes) {
  * Allow gravityform labels to be hidden 
  */
 add_filter( 'gform_enable_field_label_visibility_settings', '__return_true' );
+
+/**
+ * Loda gravityforms javascript in footer 
+ */
+add_filter('gform_init_scripts_footer', '__return_true');
+add_filter( 'gform_cdata_open', 'wrap_gform_cdata_open', 1 );
+}
+namespace {
+function wrap_gform_cdata_open( $content = '' ) {
+if ( ( defined('DOING_AJAX') && DOING_AJAX ) || isset( $_POST['gform_ajax'] ) ) {
+return $content;
+}
+$content = 'document.addEventListener( "DOMContentLoaded", function() { ';
+return $content;
+}
+add_filter( 'gform_cdata_close', 'wrap_gform_cdata_close', 99 );
+function wrap_gform_cdata_close( $content = '' ) {
+if ( ( defined('DOING_AJAX') && DOING_AJAX ) || isset( $_POST['gform_ajax'] ) ) {
+return $content;
+}
+$content = ' }, false );';
+return $content;
+}
+}
