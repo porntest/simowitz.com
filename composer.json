@@ -60,7 +60,8 @@
     "advanced-custom-fields/advanced-custom-fields-pro": "*",
     "wpackagist-plugin/postman-smtp": "1.7.2",
     "wpackagist-plugin/ninja-forms": "3.0.24",
-    "roots/soil": "3.7.1"
+    "roots/soil": "3.7.1",
+    "wpackagist-plugin/autodescription": "2.7.3"
   },
   "require-dev": {
     "squizlabs/php_codesniffer": "^2.5.1",
