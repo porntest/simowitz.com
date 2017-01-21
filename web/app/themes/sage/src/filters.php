@@ -1,6 +1,6 @@
 <?php
 
-namespace App {
+namespace App;
 
 /**
  * Add <body> classes
@@ -34,24 +34,31 @@ add_filter('excerpt_more', function () {
 array_map(function ($type) {
     add_filter("{$type}_template_hierarchy", function ($templates) {
         return call_user_func_array('array_merge', array_map(function ($template) {
-            $normalizedTemplate = str_replace('.', '/', sage('blade')->normalizeViewPath($template));
+            $transforms = [
+                '%^/?(templates)?/?%' => config('sage.disable_option_hack') ? 'templates/' : '',
+                '%(\.blade)?(\.php)?$%' => ''
+            ];
+            $normalizedTemplate = preg_replace(array_keys($transforms), array_values($transforms), $template);
             return ["{$normalizedTemplate}.blade.php", "{$normalizedTemplate}.php"];
         }, $templates));
     });
 }, [
     'index', '404', 'archive', 'author', 'category', 'tag', 'taxonomy', 'date', 'home',
-    'front_page', 'page', 'paged', 'search', 'single', 'singular', 'attachment'
+    'frontpage', 'page', 'paged', 'search', 'single', 'singular', 'attachment'
 ]);
 
 /**
  * Render page using Blade
  */
 add_filter('template_include', function ($template) {
-    echo template($template, apply_filters('sage/template_data', []));
+    $data = array_reduce(get_body_class(), function ($data, $class) use ($template) {
+        return apply_filters("sage/template/{$class}/data", $data, $template);
+    }, []);
+    echo template($template, $data);
 
     // Return a blank file to make WordPress happy
-    return get_template_directory() . '/index.php';
-}, 1000);
+    return get_theme_file_path('index.php');
+}, PHP_INT_MAX);
 
 /**
  * Tell WordPress how to find the compiled path of comments.blade.php
@@ -77,21 +84,21 @@ add_filter( 'gform_enable_field_label_visibility_settings', '__return_true' );
  */
 add_filter('gform_init_scripts_footer', '__return_true');
 add_filter( 'gform_cdata_open', 'wrap_gform_cdata_open', 1 );
-}
-namespace {
-function wrap_gform_cdata_open( $content = '' ) {
-if ( ( defined('DOING_AJAX') && DOING_AJAX ) || isset( $_POST['gform_ajax'] ) ) {
-return $content;
-}
-$content = 'document.addEventListener( "DOMContentLoaded", function() { ';
-return $content;
-}
-add_filter( 'gform_cdata_close', 'wrap_gform_cdata_close', 99 );
-function wrap_gform_cdata_close( $content = '' ) {
-if ( ( defined('DOING_AJAX') && DOING_AJAX ) || isset( $_POST['gform_ajax'] ) ) {
-return $content;
-}
-$content = ' }, false );';
-return $content;
-}
-}
+
+// namespace {
+// function wrap_gform_cdata_open( $content = '' ) {
+// if ( ( defined('DOING_AJAX') && DOING_AJAX ) || isset( $_POST['gform_ajax'] ) ) {
+// return $content;
+// }
+// $content = 'document.addEventListener( "DOMContentLoaded", function() { ';
+// return $content;
+// }
+// add_filter( 'gform_cdata_close', 'wrap_gform_cdata_close', 99 );
+// function wrap_gform_cdata_close( $content = '' ) {
+// if ( ( defined('DOING_AJAX') && DOING_AJAX ) || isset( $_POST['gform_ajax'] ) ) {
+// return $content;
+// }
+// $content = ' }, false );';
+// return $content;
+// }
+// }
