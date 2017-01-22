@@ -9,6 +9,9 @@
     }
   }
 }
+#wpadminbar {
+  position: fixed !important;
+}
 nav.header {
   @extend %row;
   justify-content: space-between;
@@ -91,6 +94,16 @@ nav.header {
 .nav-primary {
   @extend %col-xs-8;
   // max-width: 800px;
+}
+.admin-bar {
+  .nav-primary {
+    top: 46px;
+  }
+  @media screen and (min-width: 783px) {
+    .nav-primary {
+      top: 32px;
+    }
+  }
 }
 #menu-main-menu:not(.mm-panel) {
   @extend %row;
