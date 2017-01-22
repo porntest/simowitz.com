@@ -1,3 +1,14 @@
+// Fix sticky header positioning when logged in
+.admin-bar {
+  nav.header {
+    top: 46px;
+  }
+  @media screen and (min-width: 783px) {
+    nav.header {
+      top: 32px;
+    }
+  }
+}
 nav.header {
   @extend %row;
   justify-content: space-between;
