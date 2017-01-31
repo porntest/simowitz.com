@@ -39,11 +39,12 @@
     @extend .animated;
     @extend .fadeInUp;
     font-family: 'Cabin', sans-serif;
-    font-size: 1.15em;
+    font-size: 1.35em;
     line-height: 1.75em;
     max-width: 800px;
     @media(min-width: map-get($grid-breakpoints, md)) { 
-      font-size: 1.25em;
+      font-size: 1.55em;
+      line-height: 1.95em;
     }
   }
   .slider__CAB {
