@@ -32,6 +32,19 @@ if( function_exists('acf_add_options_page') ) {
 	));
 }
 
+function acf_load_select_form( $field ) {
+  $field['choices'] = array();
+  $forms = Ninja_Forms()->form()->get_forms();
+  foreach( $forms as $form ) {
+    $label = $form->get_setting( 'title' );
+    $value = $form->get_id();
+    $field['choices'][ $value ] = $label;
+  }
+  return $field;
+}
+
+add_filter('acf/load_field/name=contact_select_form', 'acf_load_select_slider');
+
 function acf_load_select_slider( $field ) {
     
     // reset choices
