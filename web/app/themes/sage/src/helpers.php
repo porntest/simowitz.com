@@ -111,3 +111,10 @@ function title()
     }
     return get_the_title();
 }
+
+function console_log( $data )
+{
+  echo '<script>';
+  echo 'console.log('. json_encode( $data ) .')';
+  echo '</script>';
+}
