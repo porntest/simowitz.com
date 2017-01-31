@@ -43,7 +43,7 @@ function acf_load_select_form( $field ) {
   return $field;
 }
 
-add_filter('acf/load_field/name=contact_select_form', 'acf_load_select_slider');
+add_filter('acf/load_field/name=contact_select_form', 'acf_load_select_form');
 
 function acf_load_select_slider( $field ) {
     
