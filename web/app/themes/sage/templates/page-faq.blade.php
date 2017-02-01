@@ -18,7 +18,7 @@
               <h4>{{the_sub_field('question')}}</h4>
             </div>
             <div>
-              <p>{{the_sub_field('answer')}}</p>
+              {{the_sub_field('answer')}}
             </div>
           </div>
         @endwhile

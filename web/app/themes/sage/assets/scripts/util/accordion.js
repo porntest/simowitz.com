@@ -21,7 +21,10 @@ class Fold {
   init() {
     this.element.classList.add('accordion__fold');
     this.panel.classList.add('accordion__panel');
+    this.panelHeight = this.panel.offsetHeight;
+    this.panel.style.height = '0px';
     this.header.classList.add('accordion__header');
+    this.header.setAttribute('aria-expanded', false)
     this.element.addEventListener('open', this.onOpen.bind(this));
     this.element.addEventListener('close', this.onClose.bind(this));
     this.header.addEventListener('click', this.onClick.bind(this));
@@ -51,11 +54,15 @@ class Fold {
   }
   collapse() {
     this.element.classList.remove('accordion__fold--expanded');
+    this.header.setAttribute('aria-expanded', false)
     this.panel.classList.remove('accordion__panel--expanded');
+    this.panel.style.height = '0px';
   }
   expand() {
     this.element.classList.add('accordion__fold--expanded');
+    this.header.setAttribute('aria-expanded', true)
     this.panel.classList.add('accordion__panel--expanded');
+    this.panel.style.height = `${this.panelHeight}px`;
   }
 }
 

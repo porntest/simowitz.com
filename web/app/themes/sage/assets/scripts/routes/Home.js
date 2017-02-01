@@ -16,9 +16,9 @@ export default {
     // slider.resize();
     heroSlider = new Flickity('.slider', {
       cellSelector: '.slider__slide',
+      draggable: false,
       wrapAround: true,
-      prevNextButtons: false,
-      autoPlay: 6000,
+      prevNextButtons: true,
     });
     awardSlider = new Flickity('.awards', {
       cellSelector: '.award',

@@ -80,3 +80,5 @@ function acf_load_select_slider( $field ) {
 }
 
 add_filter('acf/load_field/name=select_slider', 'acf_load_select_slider');
+
+remove_filter( 'acf_the_content', 'wpautop' );

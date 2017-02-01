@@ -2,13 +2,14 @@
   // overflow: hidden;
 }
 .accordion__panel {
-  height: 0px;
+  // height: 0px;
   // opacity: 0;
   // transform: scaleY(0)
+  transition: height 0.4s;
 }
 .accordion__panel--expanded {
   // opacity: 1;
-  height: auto;
+  // height: auto;
   // transform: scaleY(1)
 }
 .accordion__header {
