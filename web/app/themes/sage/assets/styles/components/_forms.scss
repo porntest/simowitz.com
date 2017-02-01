@@ -42,6 +42,11 @@
     border-right: none;
   }
 }
+.consultation__form {
+  @extend %col-xs-12;
+  @extend %col-lg-7;
+
+}
 
 .contact-form {
   padding: 4px;
