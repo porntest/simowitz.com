@@ -24,34 +24,20 @@ nav.header {
   width: 100%;
   z-index: 2;
   will-change: transform;
-  &:after {
-    position: absolute;
-    bottom: 0px;
-    content: '';
-    width: 100%;
-    height: 1px;
-    box-shadow: 0px 2px 8px 0px rgba(0,0,0,0.85);
-    z-index: -1;
-    opacity: 1;
-    will-change: opacity;
-    transition: opacity 0.4s;
-  }
+  box-shadow: 0px 0px 20px 0px rgba(0,0,0,0.85);
   &.header--hidden {
-    &:after {
-      opacity: 0;
-    }
+    box-shadow: none;
+    transition: all 0.4s;
   }
-  // transition: transform 0.5s;
 }
 .brand {
   @extend %row;
-  @extend %col-xs-8;
   @extend %col-sm-6;
   @extend %col-md-4;
   align-items: center;
   // align-self: center;
   // transform: skew(-20deg);
-  padding: 4px 8px;
+  padding: 0px 8px;
   height: 100%;
   background-color: white;
   // border-radius: 8px 0 0 0px;
@@ -70,18 +56,26 @@ nav.header {
   }
 }
 .brand__logo {
-  height: 70px;
+  height: 40px;
   .cls-1 {
     fill: $gold;
+  }
+  @media (min-width: map-get($grid-breakpoints, md)) {
+    height: 60px;
   }
 }
 .brand__text {
   @extend %col-xs-12;
   @extend %row;
-  p {
-  }
 }
 .brand__name {
+  font-family: 'Rufina', sans-serif;
+  font-variant: small-caps;
+  font-size: 1.00em;
+  margin: 0 auto;
+  @media (min-width: map-get($grid-breakpoints, lg)) {
+    font-size: 1.70vw;
+  }
 }
 .brand__slogan {
 }
@@ -93,6 +87,7 @@ nav.header {
 }
 .nav-primary {
   @extend %col-xs-8;
+  align-self: stretch;
   // max-width: 800px;
 }
 .admin-bar {
@@ -115,9 +110,11 @@ nav.header {
   justify-content: space-around;
   background-color: $purple;
   width: 100%;
+  height: 100%;
   a {
     text-decoration: none;
     color: black;
+    font-family: 'Basic';
   }
   // Primary navigation
   > li {
@@ -129,9 +126,10 @@ nav.header {
     // background-color: #ddd;
     > a {
       color: white;
-      height: 80px;
-      line-height: 80px;
-      display: block;
+      height: 100%;
+      display: flex;
+      align-items: center;
+      font-size: 1.2em;
     }
     // Top level dropdown symbol
     &.menu-item-has-children {
@@ -145,8 +143,8 @@ nav.header {
     // All other list items
     li {
       &:hover > ul.sub-menu {
-        display: flex;
-        flex-direction: column;
+        visibility: visible;
+        opacity: 1;
       }
     }
   
@@ -154,12 +152,16 @@ nav.header {
     position: relative;
   }
   ul.sub-menu {
-    display: none;
+    visibility: hidden;
+    display: flex;
+    flex-direction: column;
+    opacity: 0;
     position: absolute;
     width: auto;
     border-left: 1px solid black;
     border-right: 1px solid black;
     padding: 0;
+    transition: visibility 0.3s, opacity 0.3s; 
     // box-shadow: 0px 4px 8px -2px rgba(0,0,0,0.65);
     // .sub-menu {
       // box-shadow: none;
@@ -171,9 +173,21 @@ nav.header {
       display: inline-block;
       white-space: nowrap;
       padding: 12px 8px;
-      background-color: #ddd;
+      padding-right: 12px;
+      background-color: lighten($purple, 40%);
       border-bottom: 1px solid black;
       text-align: left;
+      transition: background-color 0.2s;
+      &:hover {
+        background-color: white;
+        a {
+          transform: translateX(4px);
+        }
+      }
+      a {
+        display: block;
+        transition: transform 0.2s;
+      }
     }
     .sub-menu {
       position: absolute;

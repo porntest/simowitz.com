@@ -6,14 +6,14 @@ import 'jquery.mmenu/dist/addons/offcanvas/jquery.mmenu.offcanvas.min';
 import 'jquery.mmenu/dist/addons/fixedelements/jquery.mmenu.fixedelements.min';
 import svgInjector from 'svg-injector';
 import Hamburger from '../components/Hamburger';
-import Sticky from '../util/header';
+import Header from '../util/header';
 
 export default {
   init() {
     // JavaScript to be fired on all pages
     const mobileMenu = jQuery('.nav-primary');
     svgInjector(document.querySelectorAll('.inject-svg'));
-    new Sticky('nav.header', '.slider').init();
+    new Header('nav.header', '.sticky--hide').init();
     mobileMenu.mmenu({}, {
       clone: true,
     });
@@ -27,6 +27,14 @@ export default {
     });
     menuAPI.bind('closed', () => {
       setTimeout(() => $('.nav-button').removeClass('is-active'), 50);
+    });
+    jQuery(document).on('click', 'a', function(event){
+      if (/#/.test(this.href)) {
+        event.preventDefault();
+        $('html, body').animate({
+            scrollTop: $( $.attr(this, 'href') ).offset().top,
+        }, 1500);
+      }
     });
   },
   finalize() {

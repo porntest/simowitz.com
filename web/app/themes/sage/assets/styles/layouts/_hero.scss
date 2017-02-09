@@ -8,11 +8,22 @@
       }
     }
   }
+  .flickity-prev-next-button {
+    width: 34px;
+    height: 34px;
+    @media(min-width: map-get($grid-breakpoints, lg)) { 
+      width: 44px;
+      height: 44px;
+    }
+  }
+}
+.flickity-viewport {
+  transition: height 0.2s;
 }
 .slider__slide {
   @extend %row;
   flex-direction: row-reverse;
-  height: 800px;
+  height: auto;
   width: 100%;
   background-size: cover;
 }
@@ -21,18 +32,18 @@
   @extend %row;
   flex-direction: column;
   align-content: center;
-  padding: 40px;
+  padding: 60px;
   color: white;
   background-color: rgba(0,0,0,0.75);
-  // border-right: 2px solid black;
   h2 {
     @extend .fadeIn;
     @extend .animated;
     margin: 0;
     border-bottom: 5px solid $gold;
     padding-bottom: 5px;
+    font-size: 10vw;
     @media(min-width: map-get($grid-breakpoints, md)) { 
-      font-size: 5.5em;
+      font-size: 6vw;
       letter-spacing: 3px;
     }
   }
@@ -42,10 +53,10 @@
     font-family: 'Cabin', sans-serif;
     font-size: 1.35em;
     line-height: 1.75em;
-    max-width: 800px;
-    @media(min-width: map-get($grid-breakpoints, md)) { 
-      font-size: 1.55em;
-      line-height: 1.95em;
+    max-width: 750px;
+    @media(min-width: map-get($grid-breakpoints, lg)) { 
+      font-size: 1.45em;
+      line-height: 2.25em;
     }
   }
   .slider__CAB {
@@ -56,12 +67,14 @@
 .slider__image {
   @extend %col-sm-hidden-down;
   @extend %col-md;
+  @extend %row;
+  flex-direction: column;
+  justify-content: flex-end;
   max-width: 570px;
-  background-color: rgba($gold, 0.75);
+  background-color: rgba($gold, 0.25);
   // border-right: 2px solid $gold;
   position: relative;
   img {
-    position: absolute;
     bottom: 0;
     width: 100%;
     height: auto;

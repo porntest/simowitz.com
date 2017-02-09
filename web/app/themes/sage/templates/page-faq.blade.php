@@ -1,9 +1,7 @@
 @extends('layouts.base')
 
 @section('content')
-  <div class="featured-image" style="background-image: url({{the_post_thumbnail_url()}})">
-    <h2 class="page-title">{{the_title()}}</h2>
-  </div>
+  @include('partials.featured-image')
   <section class="faq-section">
   <aside class="sidebar">
     @php(dynamic_sidebar('sidebar-practices'))

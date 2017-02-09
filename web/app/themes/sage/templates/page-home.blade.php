@@ -13,9 +13,9 @@
               <div class="slider__info-text">
                 <h2>{{the_sub_field('heading')}}</h2>
                 {{the_sub_field('tagline')}}
-                @if(get_sub_field('link'))
+                @if(get_sub_field('label'))
                 <div class="slider__CAB">
-                  <a href="{{the_sub_field('link')}}" class="btn--action">{{the_sub_field('label')}}</a>
+                  <a href="@php get_sub_field('link_type') == 'page' ? the_sub_field('link') : the_sub_field('url') @endphp" class="btn--action">{{the_sub_field('label')}}</a>
                 </div>
                 @endif
               </div>
@@ -28,6 +28,7 @@
       @endwhile
     @endif
     </div>
+    <div class="sticky--hide"></div>
     {{-- @endif --}}
   <div class="awards">
     @if(have_rows('awards'))

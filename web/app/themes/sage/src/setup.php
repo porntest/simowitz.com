@@ -13,7 +13,7 @@ use Roots\Sage\Template\BladeProvider;
  */
 add_action('wp_enqueue_scripts', function () {
     wp_enqueue_script('sage/main.js', asset_path('scripts/main.js'), ['jquery'], null, true);
-    wp_enqueue_style('google-fonts', 'https://fonts.googleapis.com/css?family=Montserrat|Merriweather|Open+Sans+Condensed:300|Cabin', false, null);
+    wp_enqueue_style('google-fonts', 'https://fonts.googleapis.com/css?family=Merriweather|Open+Sans+Condensed:300|Basic|Rufina', false, null);
 }, 100);
 
 /**
@@ -93,8 +93,12 @@ add_action('widgets_init', function () {
     ] + $config);
     register_sidebar([
         'name'          => __('Practices', 'sage'),
-        'id'            => 'sidebar-practices'
-    ] + $config);
+        'id'            => 'sidebar-practices',
+        'before_widget' => '',
+        'after_widget'  => '',
+        'before_title'  => '',
+        'after_title'   => ''
+    ]);
     register_sidebar([
         'name'          => __('Footer', 'sage'),
         'id'            => 'sidebar-footer'

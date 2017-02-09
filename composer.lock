@@ -4,8 +4,8 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#composer-lock-the-lock-file",
         "This file is @generated automatically"
     ],
-    "hash": "10820aefb80fabac2163c500277dab2c",
-    "content-hash": "5a585b5b7e6735cc17101b89a08d00a1",
+    "hash": "c143f29af504a8b550aab97f8482aede",
+    "content-hash": "e1f94d9db6f388c78d62a79dae0e98c2",
     "packages": [
         {
             "name": "advanced-custom-fields/advanced-custom-fields-pro",
@@ -496,17 +496,37 @@
             "time": "2016-09-01 10:05:43"
         },
         {
-            "name": "wpackagist-plugin/autodescription",
-            "version": "2.7.3",
+            "name": "wpackagist-plugin/amp",
+            "version": "0.4.2",
             "source": {
                 "type": "svn",
-                "url": "https://plugins.svn.wordpress.org/autodescription/",
-                "reference": "trunk"
+                "url": "https://plugins.svn.wordpress.org/amp/",
+                "reference": "tags/0.4.2"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://downloads.wordpress.org/plugin/autodescription.zip",
-                "reference": null,
+                "url": "https://downloads.wordpress.org/plugin/amp.0.4.2.zip",
+                "reference": "tags/0.4.2",
+                "shasum": null
+            },
+            "require": {
+                "composer/installers": "~1.0"
+            },
+            "type": "wordpress-plugin",
+            "homepage": "https://wordpress.org/plugins/amp/"
+        },
+        {
+            "name": "wpackagist-plugin/autodescription",
+            "version": "2.8.2",
+            "source": {
+                "type": "svn",
+                "url": "https://plugins.svn.wordpress.org/autodescription/",
+                "reference": "tags/2.8.2"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://downloads.wordpress.org/plugin/autodescription.2.8.2.zip",
+                "reference": "tags/2.8.2",
                 "shasum": null
             },
             "require": {
@@ -517,16 +537,16 @@
         },
         {
             "name": "wpackagist-plugin/ninja-forms",
-            "version": "3.0.24",
+            "version": "3.0.27",
             "source": {
                 "type": "svn",
                 "url": "https://plugins.svn.wordpress.org/ninja-forms/",
-                "reference": "tags/3.0.24"
+                "reference": "tags/3.0.27"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://downloads.wordpress.org/plugin/ninja-forms.3.0.24.zip",
-                "reference": "tags/3.0.24",
+                "url": "https://downloads.wordpress.org/plugin/ninja-forms.3.0.27.zip",
+                "reference": "tags/3.0.27",
                 "shasum": null
             },
             "require": {
@@ -554,6 +574,26 @@
             },
             "type": "wordpress-plugin",
             "homepage": "https://wordpress.org/plugins/postman-smtp/"
+        },
+        {
+            "name": "wpackagist-plugin/schema",
+            "version": "1.6.5",
+            "source": {
+                "type": "svn",
+                "url": "https://plugins.svn.wordpress.org/schema/",
+                "reference": "trunk"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://downloads.wordpress.org/plugin/schema.zip",
+                "reference": null,
+                "shasum": null
+            },
+            "require": {
+                "composer/installers": "~1.0"
+            },
+            "type": "wordpress-plugin",
+            "homepage": "https://wordpress.org/plugins/schema/"
         }
     ],
     "packages-dev": [
@@ -603,16 +643,16 @@
         },
         {
             "name": "squizlabs/php_codesniffer",
-            "version": "2.7.1",
+            "version": "2.8.0",
             "source": {
                 "type": "git",
                 "url": "https://github.com/squizlabs/PHP_CodeSniffer.git",
-                "reference": "9b324f3a1132459a7274a0ace2e1b766ba80930f"
+                "reference": "86dd55a522238211f9f3631e3361703578941d9a"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/squizlabs/PHP_CodeSniffer/zipball/9b324f3a1132459a7274a0ace2e1b766ba80930f",
-                "reference": "9b324f3a1132459a7274a0ace2e1b766ba80930f",
+                "url": "https://api.github.com/repos/squizlabs/PHP_CodeSniffer/zipball/86dd55a522238211f9f3631e3361703578941d9a",
+                "reference": "86dd55a522238211f9f3631e3361703578941d9a",
                 "shasum": ""
             },
             "require": {
@@ -677,7 +717,7 @@
                 "phpcs",
                 "standards"
             ],
-            "time": "2016-11-30 04:02:31"
+            "time": "2017-02-02 03:30:00"
         }
     ],
     "aliases": [],

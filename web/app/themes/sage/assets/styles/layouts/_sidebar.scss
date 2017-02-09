@@ -1,11 +1,9 @@
 .sidebar {
-  @extend %col-sm-hidden-down;
-  @extend %col-md-2;
+  @extend %col-md-hidden-down;
+  @extend %col-lg-2;
   min-width: 265px;
   background-color: lighten($purple, 50%);
   min-height: 100vh;
-  font-family: 'Open Sans Condensed', sans-serif;
-  font-size: 1.75em;
   @media (max-width: 864px) {
     min-width: 220px;
   }
@@ -20,11 +18,14 @@
     position: relative;
     text-decoration: none;
     padding-left: 8px;
-    color: #666;
+    color: #333;
     line-height: 80px;
     height: 80px;
     width: 100%;
     display: inline-block;
+    font-family: 'Rufina', sans-serif;
+    font-style: italic;
+    font-size: 1.15em;
     z-index: 2;
     &:hover {
       &::after {

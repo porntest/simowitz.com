@@ -8,7 +8,15 @@
       {{-- </div> --}}
       <div class="brand">
         {{-- <a class="brand" href="{{ home_url('/') }}"> --}}
-          <img class="brand__logo inject-svg" src="{{get_field('logo', 'options')['url']}}" alt="{{get_field('logo', 'options')['alt']}}">
+          @if(get_field('logo', 'options'))
+            <img class="brand__logo" src="
+            {{get_field('logo', 'options')['url']}}"
+            alt="{{get_field('logo', 'options')['alt']}}">
+          @else
+            <img class="brand__logo inject-svg" src="
+            {{get_template_directory_uri().'/assets/images/logo.svg'}}"
+            alt="logo">
+          @endif
           <div class="brand__text">
             <p class="brand__name">
             @if (get_field('company_name', 'options'))

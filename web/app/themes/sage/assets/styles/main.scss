@@ -11,12 +11,14 @@
 @import '~jquery.mmenu/dist/extensions/positioning/jquery.mmenu.positioning';
 @import "~animate.css";
 
+@import "mixins/typography";
 @import "common/global";
 @import "common/wordpress";
 @import "components/grid";
 @import "components/buttons";
 @import "components/comments";
 @import "components/forms";
+@import "components/images";
 @import "components/accordion";
 //@import "components/wp-classes";
 @import "layouts/awards";
